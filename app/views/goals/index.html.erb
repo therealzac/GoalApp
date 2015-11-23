@@ -1,0 +1,18 @@
+<h2>Goals</h2>
+<%= button_to "New goal", new_goal_url %>
+<hr>
+
+<% @goals.each do |goal| %>
+<ul>
+  <li>
+    <% if goal.exposure == "public" || goal.user_id == current_user.id %>
+      <%= goal.content %>
+      <%= goal.user.username %>
+      <%  if goal.user_id == current_user.id %>
+        <%= button_to "Edit", edit_goal_url(goal) %>
+      <% end %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+<br>
