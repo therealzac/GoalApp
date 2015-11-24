@@ -1,18 +1,22 @@
 <h2>New Goal</h2>
 <form action="<%= goals_url %>" method="post">
   <%= auth_token_input %>
+  
   <input type="hidden" name="goal[status]" value="pending">
+
   <label>
     Goal
     <input type="textarea" name="goal[content]" value="">
   </label>
+
   <label>
     Exposure
     <select name="goal[exposure]" id="Exposure">
-      <option value="public">Public</option>
-      <option value="private">Private</option>
+      <option value="Public">Public</option>
+      <option value="Private">Private</option>
     </select>
   </label>
+
   <input type="submit" value="Make goal">
 
 </form>

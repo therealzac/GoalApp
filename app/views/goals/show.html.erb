@@ -1,0 +1,17 @@
+<h2><%= @goal.user.username %></h2>
+<%= @goal.content %>
+<%= @goal.status %>
+<% if current_user.id == @goal.user_id %>
+  <%= link_to "Edit", edit_goal_url(@goal) %>
+  <%= button_to "Delete", goal_url(@goal), method: :delete %>
+<% end %>
+
+<hr>
+Comments
+<ul>
+  <% @goal.comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+    <%= comment.user.username %>
+  </li>
+</ul>

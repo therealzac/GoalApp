@@ -49,7 +49,7 @@ feature "the signup process" do
 end
 
   def login
-    user = FactoryGirl.build(:user)
+    user = FactoryGirl.create(:user)
     visit new_session_url
     fill_in 'username', with: user.username
     fill_in 'password', with: user.password
